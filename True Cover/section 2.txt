@@ -1,0 +1,100 @@
+public class FindFirstIndex {
+
+       public static synchronized int index(String a,String b) {
+
+              return a.indexOf(b);
+
+ 
+
+       }
+
+       public static void main(String[] args) {
+
+              String s1="abrakabra";
+
+              String s2="aka";
+
+              System.out.println(FindFirstIndex.index(s1, s2));
+
+       }
+
+}
+
+ 
+
+import java.util.*;
+
+public class ReverseString {
+
+       public static synchronized String reverse(String s) {
+
+              String reversedString="";
+
+ 
+
+              String [] words=s.split(" ");
+
+              for(String i:words) {
+
+                     StringBuffer sb=new StringBuffer(i);
+
+                     sb.reverse();
+
+                     reversedString+=sb.toString()+" ";
+
+              }
+
+              reversedString=reversedString.substring(0, (reversedString.length()-1));
+
+              return reversedString;
+
+ 
+
+       }
+
+      
+
+      
+
+       public static void main(String[] args) {
+
+ 
+
+              System.out.println(ReverseString.reverse("This is a sTring"));
+
+       }
+
+}
+
+package Solution;
+
+public class CharFrequency {
+	
+public static char getMaxOccuringChar(String str) 
+    { 
+        
+        int count[] = new int[256]; 
+ 
+        int len = str.length(); 
+        for (int i=0; i<len; i++) 
+            count[str.charAt(i)]++; 
+       
+        int max = -1;  
+        char result = ' ';    
+        
+        for (int i = 0; i < len; i++) { 
+            if (max < count[str.charAt(i)]) { 
+                max = count[str.charAt(i)]; 
+                result = str.charAt(i); 
+            } 
+        } 
+       
+        return result; 
+    } 
+public static void main(String[] args) 
+{ 
+    String str = "aaabb"; 
+    System.out.println("Max occurring character is " + 
+                        getMaxOccuringChar(str)); 
+} 
+}
